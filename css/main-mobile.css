@@ -97,7 +97,7 @@ body {
   margin: 0;
   direction: rtl;
   padding: 0;
-  background-color: transparent !important;
+  background-color: transparent;
   font: inherit;
   vertical-align: baseline;
   line-height: 1;
@@ -111,6 +111,9 @@ body.newss .loading {
   z-index: 999999;
   pointer-events: none;
 }
+body.bg {
+  background-color: #1D2F3B;
+}
 
 .navigation {
   width: 90%;
@@ -119,7 +122,7 @@ body.newss .loading {
   align-items: flex-start;
   gap: 0.2em;
   margin: 0 auto;
-  margin-top: 8.5em;
+  margin-top: 6em;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -133,9 +136,9 @@ body.newss .loading {
   right: 0;
 }
 .navigation .nav {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
-  line-height: 21.91px;
+  line-height: 18.78px;
   font-family: "IRANSANS";
   color: #D9D9D9;
 }
@@ -180,7 +183,7 @@ textarea:active:focus {
   font-family: "IRANSANSfa";
 }
 
-header.DesktopHeader {
+header.MobileHeader {
   width: 100vw;
   display: grid;
   justify-content: center;
@@ -190,17 +193,18 @@ header.DesktopHeader {
   padding-top: 1em;
   left: 0;
   grid-template-columns: repeat(2, 1fr);
-  z-index: 5;
+  z-index: 999;
+  padding-bottom: 1em;
 }
-header.DesktopHeader.hideINSearch {
+header.MobileHeader.hideINSearch {
   z-index: 101;
   pointer-events: none;
 }
-header.DesktopHeader.hideINSearch .Left {
+header.MobileHeader.hideINSearch .Left {
   opacity: 0;
   pointer-events: none;
 }
-header.DesktopHeader::before {
+header.MobileHeader::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -210,15 +214,21 @@ header.DesktopHeader::before {
   margin: 0 auto;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.5333333333);
-  bottom: -2em;
+  bottom: 0em;
 }
-header.DesktopHeader.color a.linkM {
+header.MobileHeader.goDown {
+  background: linear-gradient(90deg, rgba(48, 83, 103, 0.24) 1%, rgba(48, 83, 103, 0.4) 27%, rgba(48, 83, 103, 0.51) 72%, rgba(48, 83, 103, 0.53) 92%, rgba(48, 83, 103, 0.45) 98%, #305367 100%, rgba(48, 83, 103, 0.18) 100%) !important;
+}
+header.MobileHeader.goTop {
+  background: transparent !important;
+}
+header.MobileHeader.color a.linkM {
   color: #1D2F3B !important;
 }
-header.DesktopHeader.color svg, header.DesktopHeader.color path {
-  fill: #1D2F3B;
+header.MobileHeader.color svg, header.MobileHeader.color path {
+  fill: #1D2F3B !important;
 }
-header.DesktopHeader.color .toggleBox {
+header.MobileHeader.color .toggleBox {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -232,37 +242,31 @@ header.DesktopHeader.color .toggleBox {
   gap: 5px;
   flex-direction: column;
 }
-header.DesktopHeader.color .toggleBox:hover {
+header.MobileHeader.color .toggleBox:hover {
   cursor: pointer;
 }
-header.DesktopHeader.color .toggleItem {
+header.MobileHeader.color .toggleItem {
   width: 65%;
   margin: 0 auto;
   display: flex;
   height: 0.1vh;
   background-color: #1D2F3B !important;
 }
-header.DesktopHeader > .Left {
+header.MobileHeader > .Left {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: relative;
-  transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
 }
-header.DesktopHeader > .Left .Items {
+header.MobileHeader > .Left .Items {
   width: 90%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-right: auto;
-  gap: 3em;
+  gap: 1.3em;
 }
-header.DesktopHeader > .Left .toggleBox {
+header.MobileHeader > .Left .toggleBox {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -278,10 +282,10 @@ header.DesktopHeader > .Left .toggleBox {
   position: relative;
   z-index: 9999;
 }
-header.DesktopHeader > .Left .toggleBox:hover {
+header.MobileHeader > .Left .toggleBox:hover {
   cursor: pointer;
 }
-header.DesktopHeader > .Left .toggleItem {
+header.MobileHeader > .Left .toggleItem {
   width: 65%;
   margin: 0 auto;
   display: flex;
@@ -293,39 +297,41 @@ header.DesktopHeader > .Left .toggleItem {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-header.DesktopHeader > .Left .toggleItem.cross {
+header.MobileHeader > .Left .toggleItem.cross {
   position: absolute;
   z-index: 2;
 }
-header.DesktopHeader > .Left .Item {
+header.MobileHeader > .Left .Item {
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header.DesktopHeader > .Left .Item.searchIcon svg path {
-  fill: white;
+header.MobileHeader > .Left .Item svg, header.MobileHeader > .Left .Item path {
+  fill: #FFFFFF;
 }
-header.DesktopHeader > .Left .Item > a {
+header.MobileHeader > .Left .Item > a {
   font-size: 14px;
   font-weight: 700;
   line-height: 21.91px;
   color: #FFFFFF;
 }
-header.DesktopHeader > .Right {
+header.MobileHeader > .Right {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-header.DesktopHeader > .Right .Logo {
+header.MobileHeader > .Right .Logo {
   width: 90%;
   display: flex;
+  position: relative;
+  z-index: 9999;
   justify-content: flex-end;
   align-items: center;
   margin-left: auto;
 }
-header.DesktopHeader .MenuContainer {
+header.MobileHeader .MenuContainer {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -334,30 +340,29 @@ header.DesktopHeader .MenuContainer {
   position: fixed;
   z-index: 1000;
   left: 0;
-  top: 0;
+  top: -100vh;
   background-color: #1D2F3B;
   opacity: 0;
   pointer-events: none;
-  left: 100vw;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
 }
-header.DesktopHeader .MenuContainer.open {
-  left: 0;
+header.MobileHeader .MenuContainer.open {
+  top: 0;
   pointer-events: all;
   opacity: 1;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
 }
-header.DesktopHeader .MenuContainer .CloseInner {
+header.MobileHeader .MenuContainer .CloseInner {
   position: absolute;
-  z-index: 3;
+  z-index: 9999;
   top: 0;
   right: 0;
   width: 100px;
@@ -366,47 +371,72 @@ header.DesktopHeader .MenuContainer .CloseInner {
   justify-content: center;
   align-items: center;
 }
-header.DesktopHeader .MenuContainer .BG_MenuC {
+header.MobileHeader .MenuContainer .CloseInner svg, header.MobileHeader .MenuContainer .CloseInner path {
+  fill: #FFFFFF !important;
+}
+header.MobileHeader .MenuContainer .BG_MenuC {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-header.DesktopHeader .MenuContainer .BG_MenuC .BG {
+header.MobileHeader .MenuContainer .BG_MenuC .BG-right {
   position: absolute;
-  width: 98vw;
-  z-index: 2;
+  width: 20%;
+  z-index: 9999;
   height: 95vh;
-  margin: auto;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0;
   transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   -moz-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   -ms-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-header.DesktopHeader .MenuContainer .BG_MenuC .BG > img {
-  width: 100%;
-  height: 100%;
+header.MobileHeader .MenuContainer .BG_MenuC .BG-right > img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-header.DesktopHeader .MenuContainer .BG_MenuC .BG.showIMG {
+header.MobileHeader .MenuContainer .BG_MenuC .BG-right.showIMG {
   opacity: 1;
 }
-header.DesktopHeader .MenuContainer .Top {
+header.MobileHeader .MenuContainer .BG_MenuC .BG-left {
+  position: absolute;
+  width: 20%;
+  z-index: 9999;
+  height: 95vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -ms-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 1s 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header.MobileHeader .MenuContainer .BG_MenuC .BG-left > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header.MobileHeader .MenuContainer .BG_MenuC .BG-left.showIMG {
+  opacity: 1;
+}
+header.MobileHeader .MenuContainer .Top {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-header.DesktopHeader .MenuContainer .Bottom {
-  width: 30%;
+header.MobileHeader .MenuContainer .Bottom {
+  width: 100%;
   height: 100%;
   left: 0;
   right: 0;
@@ -420,7 +450,7 @@ header.DesktopHeader .MenuContainer .Bottom {
   align-items: center;
   background-color: rgba(29, 47, 59, 0.9490196078);
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu {
+header.MobileHeader .MenuContainer .Bottom nav.Menu {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -428,20 +458,20 @@ header.DesktopHeader .MenuContainer .Bottom nav.Menu {
   justify-content: center;
   align-items: center;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Menu-item {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Menu-item {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link {
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 28.17px;
   color: #FFFFFF;
   transition: all 1s ease;
@@ -450,7 +480,7 @@ header.DesktopHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link.fadeUP {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link.fadeUP {
   transition: all 1s ease;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -463,10 +493,10 @@ header.DesktopHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link.fad
   -ms-transform: translate(0) !important;
   -o-transform: translate(0) !important;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link:hover {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Menu-item > .Menu-link:hover {
   opacity: 0.5;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Row {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Row {
   width: 50%;
   margin: 0 auto;
   margin-top: 6vh;
@@ -474,7 +504,7 @@ header.DesktopHeader .MenuContainer .Bottom nav.Menu .Row {
   justify-content: space-between;
   align-items: center;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Row .Menu-link {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Row .Menu-link {
   width: auto;
   display: flex;
   justify-content: center;
@@ -490,112 +520,146 @@ header.DesktopHeader .MenuContainer .Bottom nav.Menu .Row .Menu-link {
   -o-transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Row .Menu-link:hover {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Row .Menu-link:hover {
   opacity: 0.5;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .Socials {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Socials {
   width: 35%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header.DesktopHeader .MenuContainer .Bottom nav.Menu .link {
+header.MobileHeader .MenuContainer .Bottom nav.Menu .Socials svg, header.MobileHeader .MenuContainer .Bottom nav.Menu .Socials path {
+  fill: #FFFFFF !important;
+}
+header.MobileHeader .MenuContainer .Bottom nav.Menu .link {
   font-size: 16px;
   font-weight: 500;
   line-height: 25.04px;
   color: #FFFFFF;
 }
 
-footer.DesktopFooter {
+footer.MobileFooter {
   width: 100vw;
-  padding-top: 4em;
+  padding-top: 1em;
   border-top: 1px solid rgba(29, 47, 59, 0.5019607843);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-footer.DesktopFooter > .Top {
-  display: grid;
-  padding: 2em 0;
-  grid-template-columns: repeat(2, 1fr);
+footer.MobileFooter > .Top {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding-bottom: 1em;
+}
+footer.MobileFooter > .Top::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5em;
   width: 90%;
   margin: 0 auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.7568627451);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7568627451);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5333333333);
 }
-footer.DesktopFooter > .Top .Left {
+footer.MobileFooter > .Top .Left {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5333333333);
+  margin: 0 auto;
+}
+footer.MobileFooter > .Top .Right {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2em;
-}
-footer.DesktopFooter > .Top .Right {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   margin-left: auto;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
-footer.DesktopFooter > .Top .Right .FooterSocials {
+footer.MobileFooter > .Top .Right .FooterSocials {
   width: auto;
   display: flex;
   gap: 1.5em;
   justify-content: center;
   align-items: center;
 }
-footer.DesktopFooter > .Top .Logo {
+footer.MobileFooter > .Top .Right .FooterSocials svg {
+  width: 25px;
+}
+footer.MobileFooter > .Top .Right .FooterSocials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer.MobileFooter > .Top .Right .FooterSocials a:nth-child(4) {
+  transform: translateY(2px);
+}
+footer.MobileFooter > .Top .Logo {
   width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2em 0;
 }
-footer.DesktopFooter > .Top .FooterMenu {
-  width: 80%;
+footer.MobileFooter > .Top .FooterMenu {
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #F9F2EA;
-  padding-right: 1.8em;
-  gap: 2em;
+  gap: 1em;
+  margin: 0 auto;
 }
-footer.DesktopFooter > .Top .FooterMenu > .Row {
+footer.MobileFooter > .Top .FooterMenu > .Row {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
-footer.DesktopFooter > .Top .FooterMenu > .Row span, footer.DesktopFooter > .Top .FooterMenu > .Row p, footer.DesktopFooter > .Top .FooterMenu > .Row a {
+footer.MobileFooter > .Top .FooterMenu > .Row .Question {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  color: #F9F2EA;
+  text-align: center;
+}
+footer.MobileFooter > .Top .FooterMenu > .Row .Answer, footer.MobileFooter > .Top .FooterMenu > .Row .Answer a {
   font-size: 14px;
   font-weight: 500;
   line-height: 21.91px;
   color: #F9F2EA;
+  text-align: center;
 }
-footer.DesktopFooter > .Bottom {
+footer.MobileFooter > .Bottom {
   width: 100%;
   background-color: #1D2F3B;
-  padding: 0.8em 0;
+  padding: 1em 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.8em;
 }
-footer.DesktopFooter > .Bottom a {
+footer.MobileFooter > .Bottom a {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.8em;
 }
-footer.DesktopFooter > .Bottom span {
-  font-size: 14px;
+footer.MobileFooter > .Bottom span {
+  font-size: 12px;
   font-weight: 400;
-  line-height: 21.91px;
+  line-height: 18.78px;
   color: #FFFFFF;
 }
 
@@ -653,7 +717,7 @@ footer.DesktopFooter > .Bottom span {
   position: absolute;
   z-index: 100;
   right: 5%;
-  top: 5vh;
+  top: 2em;
 }
 
 .searchContainerr input,
@@ -684,23 +748,23 @@ footer.DesktopFooter > .Bottom span {
 }
 
 .searchContainerr input::-moz-placeholder, .searchContainer input::-moz-placeholder {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 21.91px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.04px;
   color: #F9F2EA;
 }
 
 .searchContainerr input::placeholder,
 .searchContainer input::placeholder {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 21.91px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.04px;
   color: #F9F2EA;
 }
 
 .searchContainerr .inputBox,
 .searchContainer .inputBox {
-  width: 60%;
+  width: 90%;
   display: flex;
   position: relative;
   justify-content: center;
