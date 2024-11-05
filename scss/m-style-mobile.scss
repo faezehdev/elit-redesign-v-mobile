@@ -1,62 +1,194 @@
 $backPink: #f9f2ea;
 $darkblue: #1d2f3b;
 .gallery {
-    background-color: $backPink;
-    overflow: hidden;
-    .section1 {
-      padding-top: 239px;
-      margin-bottom: 152px;
-      .sec1Para {
-        padding-bottom: 122px;
-        p {
-          font-family: IRANSANS;
-          font-size: 24px;
-          font-weight: 400;
-          line-height: 37.57px;
-          text-align: center;
-        }
+  background-color: $backPink;
+  overflow: hidden;
+  .section1 {
+    padding-top: 239px;
+    margin-bottom: 152px;
+    .sec1Para {
+      padding-bottom: 122px;
+      p {
+        font-family: IRANSANS;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 37.57px;
+        text-align: center;
       }
-      .scrollContainer {
-        .topS {
-          display: flex;
-          justify-content: center;
-          align-items: end;
-          column-gap: 40px;
-          margin-bottom: 35px;
-        }
-        .btmS {
-          display: flex;
-          justify-content: center;
-          align-items: top;
-          column-gap: 40px;
+    }
+    .scrollContainer {
+      .topS {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        column-gap: 40px;
+        margin-bottom: 35px;
+      }
+      .btmS {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        column-gap: 40px;
+      }
+    }
+  }
+  .section2 {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+    background-color: white;
+    .lSide {
+      padding-left: 36px;
+      h1 {
+        font-family: IRANSANS;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 37.57px;
+        text-align: right;
+        margin-bottom: 20px;
+      }
+      .para {
+        margin-bottom: 20px;
+        p,
+        summary {
+          font-family: IRANSANS;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 27.57px;
+          text-align: right;
         }
       }
     }
-    .section2 {
+    .readmore {
+      cursor: text;
+      position: relative;
+    }
+    .readmore summary {
+      display: -webkit-box;
+      pointer-events: none;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .readmore summary:after {
+      bottom: -40px;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      pointer-events: initial;
+      color: #1d2f3b80;
+    }
+    .readmore:not([open]) summary:after {
+      content: attr(data-more);
+    }
+    .readmore[open] summary {
+      -webkit-line-clamp: unset;
+    }
+    .readmore[open] summary:after {
+      content: attr(data-less);
+    }
+  }
+  .section3 {
+    position: relative;
+    .scaleContainer {
       display: flex;
       align-items: center;
-      column-gap: 60px;
-      background-color: white;
-      .lSide {
-        padding-left: 36px;
-        h1 {
-          font-family: IRANSANS;
-          font-size: 24px;
-          font-weight: 400;
-          line-height: 37.57px;
-          text-align: right;
-          margin-bottom: 20px;
+      justify-content: center;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      .imgS {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          filter: brightness(0.65);
         }
-        .para {
-          margin-bottom: 20px;
-          p,
-          summary {
-            font-family: IRANSANS;
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 27.57px;
-            text-align: right;
-          }
+      }
+    }
+    .overlayItems {
+      position: absolute;
+      .galleryBtn {
+        width: 258px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        justify-content: center;
+        border: 0.5px solid $backPink;
+        cursor: pointer;
+        span {
+          background-color: $backPink;
+          width: 10px;
+          height: 10px;
+        }
+        p {
+          font-family: IRANSANS;
+          color: $backPink;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 21.91px;
+          text-align: left;
+        }
+      }
+      .scrollbarGallery {
+        height: 2px;
+        margin-top: 22px;
+        overflow: hidden;
+        position: relative;
+        width: 258px;
+        background-color: #ffffff80;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          background-color: white;
+          position: absolute;
+          height: 100%;
+        }
+      }
+      .sc {
+        margin-top: 10px;
+        p {
+          font-family: IRANSANS;
+          color: $backPink;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 21.91px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .section4 {
+    margin: 100px 0;
+    background-color: #1d2f3b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .lSide {
+      padding: 0 68px 0 62px;
+      h2 {
+        font-family: IRANSANS;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 37.57px;
+        text-align: right;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .para {
+        margin-bottom: 20px;
+        p,
+        summary {
+          font-family: IRANSANS;
+          font-size: 14px;
+          font-weight: 300;
+          color: white;
+          line-height: 27.57px;
+          text-align: right;
         }
       }
       .readmore {
@@ -76,7 +208,7 @@ $darkblue: #1d2f3b;
         cursor: pointer;
         position: absolute;
         pointer-events: initial;
-        color: #1d2f3b80;
+        color: #ffffff80;
       }
       .readmore:not([open]) summary:after {
         content: attr(data-more);
@@ -88,236 +220,228 @@ $darkblue: #1d2f3b;
         content: attr(data-less);
       }
     }
-    .section3 {
+    .inVideo {
       position: relative;
-      .scaleContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        height: 100vh;
-        width: 100vw;
-        .imgS {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          img {
-            width: 100%;
-            height: 100%;
-            filter: brightness(0.65);
-          }
-        }
-      }
-      .overlayItems {
-        position: absolute;
-        .galleryBtn {
-          width: 258px;
-          height: 36px;
-          display: flex;
-          align-items: center;
-          column-gap: 10px;
-          justify-content: center;
-          border: 0.5px solid $backPink;
-          cursor: pointer;
-          span {
-            background-color: $backPink;
-            width: 10px;
-            height: 10px;
-          }
-          p {
-            font-family: IRANSANS;
-            color: $backPink;
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 21.91px;
-            text-align: left;
-          }
-        }
-        .scrollbarGallery {
-          height: 2px;
-          margin-top: 22px;
-          overflow: hidden;
-          position: relative;
-          width: 258px;
-          background-color: #ffffff80;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          span {
-            background-color: white;
-            position: absolute;
-            height: 100%;
-          }
-        }
-        .sc {
-          margin-top: 10px;
-          p {
-            font-family: IRANSANS;
-            color: $backPink;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 21.91px;
-            text-align: center;
-          }
-        }
-      }
-    }
-    .section4 {
-      margin: 100px 0;
-      background-color: #1d2f3b;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      .lSide {
-        padding: 0 68px 0 62px;
-        h2 {
-          font-family: IRANSANS;
-          font-size: 24px;
-          font-weight: 400;
-          line-height: 37.57px;
-          text-align: right;
-          margin-bottom: 20px;
-          color: white;
-        }
-        .para {
-          margin-bottom: 20px;
-          p,
-          summary {
+      justify-content: center;
+      .playbtn {
+        position: absolute;
+        cursor: pointer;
+      }
+    }
+  }
+  .section5 {
+    h3 {
+      margin-bottom: 98px;
+      text-align: center;
+      font-family: IRANSANS;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 37.57px;
+    }
+    .sliderSection {
+      margin-bottom: 100px;
+      .swiper {
+        padding: 0 80px;
+      }
+      .swiper-slide {
+        height: auto;
+        box-shadow: 3px 4px 15.4px 0px #77777740;
+        background-color: #1d2f3b;
+      }
+      .serBox {
+        padding: 40px 15px;
+        box-shadow: none;
+        background-color: transparent;
+        .title {
+          span {
             font-family: IRANSANS;
-            font-size: 14px;
-            font-weight: 300;
+            font-size: 25px;
+            font-weight: 400;
+            display: block;
+            line-height: 39.13px;
+            width: 100%;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+            text-align: right;
             color: white;
-            line-height: 27.57px;
+          }
+          h4 {
+            font-family: IRANSANS;
+            color: white;
+            margin: 4px 0 79px 0;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 39.13px;
             text-align: right;
           }
         }
-        .readmore {
-          cursor: text;
-          position: relative;
-        }
-        .readmore summary {
-          display: -webkit-box;
-          pointer-events: none;
-          overflow: hidden;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-        }
-        .readmore summary:after {
-          bottom: -40px;
-          display: block;
-          cursor: pointer;
-          position: absolute;
-          pointer-events: initial;
-          color: #ffffff80;
-        }
-        .readmore:not([open]) summary:after {
-          content: attr(data-more);
-        }
-        .readmore[open] summary {
-          -webkit-line-clamp: unset;
-        }
-        .readmore[open] summary:after {
-          content: attr(data-less);
-        }
-      }
-      .inVideo {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .playbtn {
-          position: absolute;
-          cursor: pointer;
-        }
-      }
-    }
-    .section5 {
-      h3 {
-        margin-bottom: 98px;
-        text-align: center;
-        font-family: IRANSANS;
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 37.57px;
-      }
-      .sliderSection {
-        margin-bottom: 100px;
-        .swiper {
-          padding: 0 80px;
-        }
-        .swiper-slide {
-          height: auto;
-          box-shadow: 3px 4px 15.4px 0px #77777740;
-          background-color: #1d2f3b;
-        }
-        .serBox {
-          padding: 40px 15px;
-          box-shadow: none;
-          background-color: transparent;
-          .title {
-            span {
-              font-family: IRANSANS;
-              font-size: 25px;
-              font-weight: 400;
-              display: block;
-              line-height: 39.13px;
-              width: 100%;
-              padding-bottom: 4px;
-              border-bottom: 1px solid rgba(255, 255, 255, 0.212);
-              text-align: right;
-              color: white;
-            }
-            h4 {
-              font-family: IRANSANS;
-              color: white;
-              margin: 4px 0 79px 0;
-              font-size: 25px;
-              font-weight: 400;
-              line-height: 39.13px;
-              text-align: right;
-            }
-          }
-          .para {
-            p {
-              font-family: IRANSANS;
-              font-size: 14px;
-              font-weight: 300;
-              line-height: 27px;
-              color: white;
-              text-align: right;
-            }
+        .para {
+          p {
+            font-family: IRANSANS;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 27px;
+            color: white;
+            text-align: right;
           }
         }
       }
     }
   }
+}
 .Home {
-    background-color: #1d2f3b;
-    overflow: hidden;
-    @keyframes move {
-      25% {
-        opacity: 1;
+  background-color: #1d2f3b;
+  overflow: hidden;
+  @keyframes move {
+    25% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+  #fullpage {
+    .section1 {
+      position: relative;
+      overflow: hidden;
+      .scrollD {
+        position: absolute;
+        bottom: 82px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+        .chevron {
+          position: absolute;
+          width: 27.18px;
+          height: 2px;
+          opacity: 0;
+          transform: scale3d(0.5, 0.5, 0.5);
+          animation: move 3s ease-out infinite;
+        }
+
+        .chevron:first-child {
+          animation: move 3s ease-out 1s infinite;
+        }
+
+        .chevron:nth-child(2) {
+          animation: move 3s ease-out 2s infinite;
+        }
+
+        .chevron:before,
+        .chevron:after {
+          content: " ";
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 51%;
+          background: white;
+        }
+
+        .chevron:before {
+          left: 0;
+          transform: skew(0deg, 45deg);
+        }
+
+        .chevron:after {
+          right: 0;
+          width: 50%;
+          transform: skew(0deg, -45deg);
+        }
       }
-      33% {
-        opacity: 1;
-        transform: translateY(30px);
+      .swiper-slide {
+        display: flex;
+        .imgS {
+          display: flex;
+        }
       }
-      67% {
-        opacity: 1;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+      img {
+        height: 100vh;
+        width: 100vw;
+        filter: brightness(0.65);
       }
     }
-    #fullpage {
-      .section1 {
+    .fp-auto-height {
+      height: auto !important;
+      .fp-tableCell {
+        height: auto !important;
+      }
+    }
+    .introProj {
+      background-color: #1d2f3b;
+      text-align: center;
+      padding: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 17px;
+      h1 {
+        color: white;
+        font-family: IRANSANS;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 53.22px;
+        text-align: left;
+      }
+    }
+    .section2 {
+      position: relative;
+      .imgS {
+        height: 100vh;
         position: relative;
-        overflow: hidden;
+        img {
+          width: 100vw;
+          height: 100vh;
+          // filter: brightness(0.3);
+          transition: 1s ease;
+        }
+      }
+      .imgS::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.82) 0%,
+          rgba(0, 212, 255, 0) 34%
+        );
+      }
+      .titleProj {
+        position: absolute;
+        text-align: center;
+        bottom: 80px;
+        left: 0;
+        right: 0;
+        a {
+          text-decoration: none;
+          color: white;
+          font-family: "IRANSANS";
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 37.57px;
+          text-align: center;
+        }
         .scrollD {
-          position: absolute;
-          bottom: 82px;
+          bottom: unset;
+          left: unset;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1000;
           left: 0;
           right: 0;
           display: flex;
@@ -331,15 +455,15 @@ $darkblue: #1d2f3b;
             transform: scale3d(0.5, 0.5, 0.5);
             animation: move 3s ease-out infinite;
           }
-  
+
           .chevron:first-child {
             animation: move 3s ease-out 1s infinite;
           }
-  
+
           .chevron:nth-child(2) {
             animation: move 3s ease-out 2s infinite;
           }
-  
+
           .chevron:before,
           .chevron:after {
             content: " ";
@@ -349,217 +473,271 @@ $darkblue: #1d2f3b;
             width: 51%;
             background: white;
           }
-  
+
           .chevron:before {
             left: 0;
             transform: skew(0deg, 45deg);
           }
-  
+
           .chevron:after {
             right: 0;
             width: 50%;
             transform: skew(0deg, -45deg);
           }
         }
-        .swiper-slide {
-          display: flex;
-          .imgS {
-            display: flex;
-          }
-        }
+      }
+    }
+    .section2.active {
+      img {
+        filter: brightness(1) !important;
+        transition-delay: 0.5s;
+      }
+    }
+    .activeImg {
+      img {
+        filter: brightness(1) !important;
+      }
+    }
+  }
+  .gallery {
+    background-color: #1d2f3b;
+    .section1 {
+      margin: 0 auto;
+      padding: 35px 0 53px 0;
+      width: 90%;
+      // display: flex;
+      // align-items: center;
+      column-gap: 25px;
+      justify-content: space-between;
+      .scrollContainer {
+        width: 100%;
+        overflow: hidden;
         img {
-          height: 100vh;
-          width: 100vw;
-          filter: brightness(0.65);
+          width: 109px;
         }
       }
-      .fp-auto-height {
-        height: auto !important;
-        .fp-tableCell {
-          height: auto !important;
-        }
-      }
-      .introProj {
-        background-color: #1d2f3b;
+    }
+    .para {
+      text-align: left;
+      direction: ltr;
+      a {
+        width: 100%;
         text-align: center;
-        padding: 30px 0;
+        display: block;
+      }
+      p {
+        //   white-space: nowrap;
+        display: contents;
+        font-family: "IRANSANS";
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 60px;
+        text-align: center;
+        color: $backPink;
+      }
+    }
+    .galleryLink {
+      a {
+        margin: 0 auto;
+        text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        column-gap: 17px;
-        h1 {
-          color: white;
-          font-family: IRANSANS;
-          font-size: 20px;
-          font-weight: 400;
-          line-height: 53.22px;
-          text-align: left;
-        }
-      }
-      .section2 {
-        position: relative;
-        .imgS {
-          height: 100vh;
-          position: relative;
-          img {
-            width: 100vw;
-            height: 100vh;
-            // filter: brightness(0.3);
-            transition: 1s ease;
-          }
-        }
-        .imgS::after {
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          inset: 0;
-          background: rgb(0, 0, 0);
-          background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.82) 0%,
-            rgba(0, 212, 255, 0) 34%
-          );
-        }
-        .titleProj {
-          position: absolute;
-          text-align: center;
-          bottom: 80px;
-          left: 0;
-          right: 0;
-          a {
-            text-decoration: none;
-            color: white;
-            font-family: "IRANSANS";
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 37.57px;
-            text-align: center;
-          }
-          .scrollD {
-            bottom: unset;
-            left: unset;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1000;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            z-index: 2;
-            .chevron {
-              position: absolute;
-              width: 27.18px;
-              height: 2px;
-              opacity: 0;
-              transform: scale3d(0.5, 0.5, 0.5);
-              animation: move 3s ease-out infinite;
-            }
-  
-            .chevron:first-child {
-              animation: move 3s ease-out 1s infinite;
-            }
-  
-            .chevron:nth-child(2) {
-              animation: move 3s ease-out 2s infinite;
-            }
-  
-            .chevron:before,
-            .chevron:after {
-              content: " ";
-              position: absolute;
-              top: 0;
-              height: 100%;
-              width: 51%;
-              background: white;
-            }
-  
-            .chevron:before {
-              left: 0;
-              transform: skew(0deg, 45deg);
-            }
-  
-            .chevron:after {
-              right: 0;
-              width: 50%;
-              transform: skew(0deg, -45deg);
-            }
-          }
-        }
-      }
-      .section2.active {
-        img {
-          filter: brightness(1) !important;
-          transition-delay: 0.5s;
-        }
-      }
-      .activeImg {
-        img {
-          filter: brightness(1) !important;
+        column-gap: 10px;
+        width: 205px;
+        border: 1px solid #1d2f3b;
+        height: 55px;
+        color: #1d2f3b;
+        span {
+          display: block;
+          width: 12px;
+          height: 12px;
+          background-color: #1d2f3b;
         }
       }
     }
-    .gallery {
-      background-color: #1d2f3b;
-      .section1 {
-          margin: 0 auto;
-          padding: 35px 0 53px 0;
-        width: 90%;
-        // display: flex;
-        // align-items: center;
-        column-gap: 25px;
-        justify-content: space-between;
-        .scrollContainer {
-          width: 100%;
-          overflow: hidden;
-          img{
-            width: 109px;
-          }
+  }
+  .section3 {
+    min-height: 100vh;
+  }
+}
+
+.newAbout {
+  direction: rtl;
+  background-color: $darkblue;
+  .section1 {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    ul {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      padding-bottom:12px;
+      li {
+        a,
+        span,
+        h2 {
+          font-family: "IRANSANS";
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 21.91px;
+          color: #d9d9d9;
+        }
+      }
+    }
+    .imgS {
+      margin-bottom: 42px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .section2 {
+    // display: flex;
+    position: relative;
+    margin-bottom: 30px;
+    &::after {
+      content: "";
+
+      background-color: #305367;
+      position: absolute;
+      height: calc(100% - 140px);
+      width: 100%;
+      inset: 0;
+    }
+    .rSide {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 30px;
+      .title {
+        display: flex;
+        column-gap: 10px;
+        align-items: end;
+        margin-bottom: 30px;
+        h1 {
+          font-family: "IRANSANS";
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 37.57px;
+          text-align: right;
+          color: white;
+          margin-bottom: -10px;
         }
       }
       .para {
-        text-align: left;
-        direction: ltr;
-        a{
-            width: 100%;
-            text-align: center;
-            display: block;
-        }
         p {
-        //   white-space: nowrap;
-        display:contents;
+          font-family: "IRANSANS";
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 24px;
+          text-align: justify;
+          color: white;
+        }
+      }
+    }
+    .lSide {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      margin-top: 20px;
+      align-items: end;
+      .imgS {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .section3 {
+    width: 90%;
+    margin: 0 auto 117px auto;
+    img {
+      width: 100%;
+    }
+    .title {
+      display: flex;
+      column-gap: 10px;
+      align-items: end;
+      margin-bottom: 30px;
+      h3 {
+        font-family: "IRANSANS";
+        font-size: 22px;
+        font-weight:500;
+        line-height: 37.57px;
+        text-align: right;
+        color: white;
+        margin-bottom: -10px;
+      }
+    }
+  }
+  .section4 {
+    // display: flex;
+    position: relative;
+    // margin-bottom: 67px;
+    margin-bottom: 48px;
+    &::after {
+      content: "";
+
+      background-color: #305367;
+      position: absolute;
+      width:  100%;
+      height: calc(100% - 180px);
+      left: 0;
+      top: 0;
+      bottom: 0;
+      
+    }
+    .rSide {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 25px;
+      .title {
+        display: flex;
+        column-gap: 10px;
+        align-items: end;
+        margin-bottom: 30px;
+        h3 {
           font-family: "IRANSANS";
           font-size: 22px;
+          font-weight: 500;
+          line-height: 37.57px;
+          text-align: right;
+          color: white;
+          margin-bottom: -10px;
+        }
+      }
+      .para {
+        p {
+          font-family: "IRANSANS";
+          font-size: 14px;
           font-weight: 400;
-          line-height: 60px;
-          text-align: center;
-          color: $backPink;
+          line-height: 24px;
+          text-align: justify;
+          color: white;
         }
+      }
+    }
+    .lSide {
+      position: relative;
+      z-index: 1;
       
-      }
-      .galleryLink {
-        a {
-          margin: 0 auto;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          column-gap: 10px;
-          width: 205px;
-          border: 1px solid #1d2f3b;
-          height: 55px;
-          color: #1d2f3b;
-          span {
-            display: block;
-            width: 12px;
-            height: 12px;
-            background-color: #1d2f3b;
-          }
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 24px;
+      .imgS {
+        width: 100%;
+        img {
+          width: 100%;
         }
       }
     }
-    .section3 {
-      min-height: 100vh;
-    }
-
   }
+}
