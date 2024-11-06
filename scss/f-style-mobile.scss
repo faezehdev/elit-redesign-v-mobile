@@ -1857,11 +1857,7 @@ svg{
             }
             .swiper-button-prev{
                 right: 7% !important;
-                transform: skew(-1deg,6deg ) scale(1.1);
-                -webkit-transform: skew(-1deg,6deg ) scale(1.1);
-                -moz-transform: skew(-1deg,6deg ) scale(1.1);
-                -ms-transform: skew(-1deg,6deg ) scale(1.1);
-                -o-transform: skew(-1deg,6deg ) scale(1.1);
+
                 &:hover       
         {
                     transform: skew(-1deg,6deg) scale(1);
@@ -1874,11 +1870,7 @@ svg{
             }
             .swiper-button-next{
                 left: 7% !important;
-                transform: skew(-1deg,-6deg) scale(1.1);
-                -webkit-transform: skew(-1deg,-6deg) scale(1.1);
-                -moz-transform: skew(-1deg,-6deg) scale(1.1);
-                -ms-transform: skew(-1deg,-6deg) scale(1.1);
-                -o-transform: skew(-1deg,-6deg) scale(1.1);
+     
                 &:hover
          
         {

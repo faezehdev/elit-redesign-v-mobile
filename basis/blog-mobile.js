@@ -1,0 +1,1 @@
+var elements=document.querySelectorAll(".blog"),gallery=document.querySelector(".BlogList");elements.forEach((e=>{gsap.to(e,{opacity:1,scrollTrigger:{trigger:e,start:"top 70%",end:"bottom bottom"}})}));const lenis=new Lenis;function raf(e){lenis.raf(e),requestAnimationFrame(raf)}requestAnimationFrame(raf);

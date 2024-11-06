@@ -1,0 +1,62 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="209365">
+     <member name="blog" type="list" size="350x228"/>
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست مقالات</title>
+    <meta name="description" content="لیست مقالات ">
+    <link href="[##cms.cms.cdn##]/newD/css/main-mobile.css" rel="stylesheet">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/newD/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/newD/css/f-style-mobile.css">
+</head>
+<body>
+    <basis core="call" file="header-mobile.inc" pageindex="[##cms.cms.pageindex##]" />
+    <main class="BlogList-mobile">
+        <div class="navigation">
+            <a href="/" title="صفحه نخست" alt="صفحه نخست" class="nav">
+                صفحه نخست 
+            </a>
+            <span class="nav">
+                .
+            </span>
+            <span class="nav">
+                بلاگ
+            </span>
+        </div>
+      <div class="BlogList-Cotainer">
+        <div class="BlogList">
+            <basis core="print" datamembername="db.blog">
+                <layout>
+                    @child
+                </layout>
+                <face>
+                    <div class="blog">
+                        <div class="IMG">
+                            <a href="@link" alt="@title" title="@title">
+                                <img src="@00350X00228prp" alt="@title" title="@title"></a>
+                            <div class="ov">
+                              <div class="title">
+                                <h2>
+                                    <a href="@link" alt="@title" title="@title">
+                                        @title  </a>
+                                  </h2>
+                            </div>
+                            </div>
+                          
+                        </div>
+            
+                     </div>
+                </face>
+            </basis>
+          
+        </div>
+      </div>
+      <basis core="call" file="footer-mobile.inc" pageindex="[##cms.cms.pageindex##]" />
+    </main>
+    <basis core="call" file="newMobileScript.inc" />
+    <script src="[##cms.cms.cdn##]/newD/js/blog-mobile.js"></script>
+</body>
+</html>

@@ -45,7 +45,7 @@ let swiperNews = new Swiper(".swiper-news", {
       }
     else{
         console.log('val',input.value);
-        var url = `/loadNew.inc?q=${input.value}`;
+        var url = `/loadNew-mobile.inc?q=${input.value}`;
         $(".loaded").load(url);}
         setTimeout(() => {
             let swiperNews = new Swiper(".swiper-news", {
@@ -103,7 +103,7 @@ let swiperNews = new Swiper(".swiper-news", {
      console.log('clicked');
  console.log('val',inputt2 );
  console.log('val',inputt2.value);
- var url = `/loadNew.inc?q=${inputt2.value}`;
+ var url = `/loadNew-mobile.inc?q=${inputt2.value}`;
  $(".loaded").load(url);
 setTimeout(() => {
     let swiperNews = new Swiper(".swiper-news", {
