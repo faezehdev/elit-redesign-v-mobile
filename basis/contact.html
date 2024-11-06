@@ -1,0 +1,330 @@
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="5" usedforid="9627">
+  <member type="view" name="contactus" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="5" usedforid="9627">
+  <member type="view" name="map" postsql="select * from [db.map] where TypeID=246" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تماس با ما</title>
+  <meta name="description" content="تماس با ما | الیت" />
+
+  <link rel="stylesheet" href="[##cms.cms.cdn##]/newD/css/leaflet.css">
+  <link rel="stylesheet" href="[##cms.cms.cdn##]/newD/css/main-mobile.css" />
+  <link rel="stylesheet" href="[##cms.cms.cdn##]/newD/css/m-style-mobile.css" />
+</head>
+
+<body>
+  <div class="contactUS">
+    <div class="breadCrumb">
+      <ul>
+        <li>
+          <a href="" title="صفحه نخست"> صفحه نخست </a>
+        </li>
+        <li>
+          <span> . </span>
+        </li>
+        <li>
+          <h2> تماس با ما</h2>
+        </li>
+      </ul>
+    </div>
+    <section class="section1">
+      <div class="rSide">
+        <h1>ارتباط با ما</h1>
+
+        <div class="infos">
+          <basis core="print" datamembername="db.contactus">
+            <layout>
+              <div class="address">
+                @child
+              </div>
+            </layout>
+
+            <face filter="TypeID=244">
+
+              <p>@Question:</p>
+              @Answer
+            </face>
+          </basis>
+          <basis core="print" datamembername="db.contactus">
+            <layout>
+              <div class="phone">
+                @child
+              </div>
+            </layout>
+
+            <face filter="TypeID=240">
+
+              <span> @Question: </span>
+              <a href="tel:@Answer">@Answer</a>
+            </face>
+          </basis>
+          <basis core="print" datamembername="db.contactus">
+
+            <face filter="text='اینستاگرام'">
+              <div class="instagram">
+                <span> اینستاگرام: </span>
+                <a href="https://instagram.com/@largetext" title="instagram"> @largetext </a>
+              </div>
+
+            </face>
+          </basis>
+          <div class="socials">
+            <basis core="print" datamembername="db.contactus">
+
+              <face filter="text='واتس اپ'">
+                <div class="whatsapp">
+                  <span> واتساپ: </span>
+                  <a href="https://wa.me/@largetext">@largetext</a>
+                </div>
+
+              </face>
+            </basis>
+            <basis core="print" datamembername="db.contactus">
+
+              <face filter="text='تلگرام'">
+                <div class="telegram">
+                  <span> تلگرام: </span>
+                  <a href="https://t.me/@largetext">@largetext</a>
+                </div>
+
+              </face>
+            </basis>
+          </div>
+
+          <basis core="print" datamembername="db.contactus">
+
+            <face filter="TypeID=243">
+              <div class="web">
+                <span> @Question: </span>
+                <a href="http://@Answer" title="instagram"> @Answer </a>
+              </div>
+
+            </face>
+          </basis>
+          <div class="captchas">
+            <div class="imgS">
+              <a href="https://www.instagram.com/elite.artgallery?igsh=ajg4cDBuNXBpdzl5&utm_source=qr">
+                <img src="images/qrcode1.jpg" alt="qrcode" />
+              </a>
+            </div>
+            <div class="imgS">
+              <a href="https://www.instagram.com/dr.hosseinmahmoudi?igsh=MThqb3YycmxqdWR2cQ%3D%3D&utm_source=qr">
+                <img src="images/qrcode2.jpg" alt="qrcode" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lSide">
+        <div class="mapSection w-full h-full">
+          <div class="mapContainer w-full h-full relative z-0">
+            <basis core="print" datamembername="db.map">
+
+              <face filter="RowNumber=2">
+                <div class="mapIn map h-full" id="map" data-x="@text" data-y="@largetext"></div>
+
+              </face>
+            </basis>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section2">
+      <h2>
+        فرم ارسال پیام
+      </h2>
+      <div class="para">
+        <p>
+          لطفا پیام مورد نظر خود را برای ما ثبت و ارسال بفرمایید.
+
+        </p>
+      </div>
+      <form name="myForm" class="homeForm1" action="" onsubmit="return validateForm()" method="post">
+        <basis core="schema" run="atclient"
+          schemaUrl="/schema/domainform/1DD4881E-238F-4BEA-AA03-75A9BA16C65E/18A283E9-AE11-47D1-9854-B4956FC07393/fa/فرم-تماس-با-ما"
+          displayMode="new" button="[data-btn-add1]" resultSourceId="demo.data1" onRendered="renderFn1">
+        </basis>
+        <basis core="callback" run="AtClient" triggers="demo.data1" method="onSource1"></basis>
+        <basis core="api" url="/schema/domainform/1DD4881E-238F-4BEA-AA03-75A9BA16C65E/fa/editobject" method="post"
+          run="atclient"
+          body="object_edit={##edit.object1.value##}&captcha={##edit.object1.captcha##}&captchaid={##edit.object1.captchaid##}"
+          content-type="application/x-www-form-urlencoded" triggers="edit.object1" if="{##edit.object1##}"
+          OnProcessed="OnProcessedEditObject1">
+        </basis>
+        <div data-bc-question="" class="qclass8 w-fit">
+          <div class="responsMsg1 responsMsg">
+            <span>فرم با موفقیت ثبت شد.</span>
+          </div>
+          <div id="requestBox" class="captchaContainerclass captcha-sefaresh2" data-bc-answer-container=""
+            data-bc-schema-info-multi="0" data-bc-schema-info-word="58" data-bc-schema-info-part="1"
+            data-bc-schema-info-part-0-type="text">
+            <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1" run="atclient">
+              <member name="code1" type="scalar" request="captcha"></member>
+            </basis>
+            <basis datamembername="captcha1.code1" core="print" run="atclient">
+              <face>
+                <script type="text/template">
+
+              <span class="captcha-sefaresh">
+                  <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                      alt="captcha" title="captcha" />
+                  <input type="hidden" name="captchaid" value="@captcha@" />
+              </span>
+          <img src="[##cms.cms.cdn##]/newD/images/cached.png" class="refressh cursor-pointer refressh1" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+          <input type="text" class="codeinputm" name="captcha" placeholder="عبارت امنیتی را وارد کنید" />
+          </script>
+              </face>
+            </basis>
+          </div>
+          <button class="showMore submitBtn" type="submit" data-btn-add1 data-btn-submit="">
+            <div class="">
+
+              <span class="rect">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                  width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+                  <defs>
+                  </defs>
+                  <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                    transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                    <path
+                      d="M 2 47 h 86 c 1.104 0 2 -0.896 2 -2 s -0.896 -2 -2 -2 H 2 c -1.104 0 -2 0.896 -2 2 S 0.896 47 2 47 z"
+                      style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                      transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path
+                      d="M 15.627 60.627 c 0.512 0 1.023 -0.195 1.414 -0.586 c 0.781 -0.781 0.781 -2.047 0 -2.828 L 4.828 45 l 12.213 -12.212 c 0.781 -0.781 0.781 -2.047 0 -2.828 c -0.781 -0.781 -2.047 -0.781 -2.828 0 L 0.586 43.586 C 0.211 43.961 0 44.47 0 45 s 0.211 1.039 0.586 1.414 l 13.627 13.627 C 14.604 60.432 15.115 60.627 15.627 60.627 z"
+                      style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                      transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                ثبت
+              </span>
+            </div>
+
+
+          </button>
+
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
+  <script src="[##cms.cms.cdn##]/_js/leaflet.js"></script>
+  <script src="[##cms.cms.cdn##]/newD/js/contactUs.js"></script>
+
+  <script>
+    const host = {
+      debug: !1,
+      settings: {
+        "connection.web.trust_login": "https://basispanel.ir/apicms",
+        "connection.web.basiscore": "https://basispanel.ir/apicms",
+        "connection.web.media": "https://basispanel.ir/apicms",
+        "default.dbsource.verb": "post",
+        "default.call.verb": "get",
+        "default.viewCommand.groupColumn": "prpid",
+        "default.dmnid": "4864",
+        "default.binding.regex": "\\{##([^#]*)##\\}",
+      },
+    };
+    function onSource1(args) {
+      console.log("onSource");
+      const captcha = document.querySelector(
+        ".homeForm1 #requestBox input[name='captcha']"
+      ).value;
+      const captchaid = document.querySelector(
+        ".homeForm1 #requestBox input[name='captchaid']"
+      ).value;
+      const stringJson = JSON.stringify(args.source?.rows[0]);
+      console.log("stringJson", stringJson);
+      $bc.setSource("edit.object1", {
+        value: stringJson,
+        captcha: captcha,
+        captchaid: captchaid,
+      });
+    }
+
+    let responsMsg = document.querySelector(".responsMsg1");
+    let responsMsgIn = document.querySelector(".responsMsg1 span");
+
+    async function OnProcessedEditObject1(args) {
+      console.log("OnProcessedEditObject1");
+      const response = args.response;
+      const json = await response.json();
+
+      if (json.errorid == 6) {
+        console.log(json);
+        responsMsgIn.innerHTML = "فرم با موفقیت ثبت شد.";
+        responsMsg.style.display = "block";
+
+        setTimeout(() => {
+          responsMsg.style.display = "none";
+        }, 2000);
+      }
+      if (json.errorid == 4) {
+        console.log(json);
+        responsMsgIn.innerHTML = "لطفا کپچا را به درستی وارد کنید.";
+
+        responsMsg.style.display = "block";
+
+        setTimeout(() => {
+          responsMsg.style.display = "none";
+        }, 2000);
+      }
+    }
+
+    function renderFn1(params) {
+      let questions = document.querySelectorAll(
+        ".homeForm1 div[data-bc-question]"
+      );
+      questions.forEach((element) => {
+        let title = element.querySelector(
+          ".homeForm1 [data-bc-question-title]"
+        );
+        let qInput = element.querySelector(".homeForm1 input");
+        let qTxtArea = element.querySelector(".homeForm1 _textarea");
+        if (title) {
+          title = element.querySelector(
+            ".homeForm1 [data-bc-question-title]"
+          ).innerHTML;
+          if (qInput) {
+            qInput.setAttribute("placeholder", title);
+          } else if (qTxtArea) {
+            qTxtArea.setAttribute("placeholder", title);
+          }
+        }
+        console.log("q", qInput);
+      });
+
+
+    }
+
+    let submitBtn = document.querySelector(".submitBtn")
+    submitBtn.addEventListener("click", function (params) {
+      const captcha = document.querySelector(
+        ".homeForm1 #requestBox input[name='captcha']"
+      ).value;
+      if (captcha == "") {
+        responsMsgIn.innerHTML = "لطفا کپچا را وارد کنید.";
+
+        responsMsg.style.display = "block";
+
+        setTimeout(() => {
+          responsMsg.style.display = "none";
+        }, 2000);
+      }
+    })
+  </script>
+</body>
+
+</html>

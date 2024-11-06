@@ -25,9 +25,10 @@ parallaxLeft.to('.topS' , {
 ScrollTrigger.create({
     animation:parallaxLeft , 
     trigger : ".scrollContainer",
-    start:"top 20%",
+    start:"top 80%",
     end:"bottom -200vw",
     scrub : 1,
+    // markers:true
     
     
   })
@@ -38,10 +39,10 @@ ScrollTrigger.create({
   ScrollTrigger.create({
     animation:parallaxRight , 
     trigger : ".scrollContainer",
-    start:"top 20%",
+    start:"top 80%",
     end:"bottom -200vw",
     scrub : 1,
-    
+    // markers:true,
 
 })
 

@@ -77,8 +77,8 @@
   font-family: "IRANSANS";
   font-style: normal;
   font-weight: 700;
-  src: url("../../_fonts/IRANSansWeb_Bold.eot") format("eot"); /* IE9 Compat Modes */
-  src: url("../../_fonts/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("../../_fonts/IRANSansWeb_Bold.woff2") format("woff2"), url("../../_fonts/IRANSansWeb_Bold") format("woff"), url("../../_fonts/IRANSansWeb_Bold.ttf") format("truetype");
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot") format("eot"); /* IE9 Compat Modes */
+  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix") format("embedded-opentype"), url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"), url("../../_fonts/IRANSansWeb(FaNum)_Bold") format("woff"), url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 }
 * {
   font-family: "IRANSANS";

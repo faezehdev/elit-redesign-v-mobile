@@ -520,6 +520,7 @@ $darkblue: #1d2f3b;
     .para {
       text-align: left;
       direction: ltr;
+      margin-bottom: 30px;
       a {
         width: 100%;
         text-align: center;
@@ -529,9 +530,9 @@ $darkblue: #1d2f3b;
         //   white-space: nowrap;
         display: contents;
         font-family: "IRANSANS";
-        font-size: 22px;
+        font-size: 13px;
         font-weight: 400;
-        line-height: 60px;
+        line-height: 29px;
         text-align: center;
         color: $backPink;
       }
@@ -573,7 +574,7 @@ $darkblue: #1d2f3b;
       display: flex;
       align-items: center;
       column-gap: 10px;
-      padding-bottom:12px;
+      padding-bottom: 12px;
       li {
         a,
         span,
@@ -668,7 +669,7 @@ $darkblue: #1d2f3b;
       h3 {
         font-family: "IRANSANS";
         font-size: 22px;
-        font-weight:500;
+        font-weight: 500;
         line-height: 37.57px;
         text-align: right;
         color: white;
@@ -686,12 +687,11 @@ $darkblue: #1d2f3b;
 
       background-color: #305367;
       position: absolute;
-      width:  100%;
+      width: 100%;
       height: calc(100% - 180px);
       left: 0;
       top: 0;
       bottom: 0;
-      
     }
     .rSide {
       position: relative;
@@ -728,7 +728,7 @@ $darkblue: #1d2f3b;
     .lSide {
       position: relative;
       z-index: 1;
-      
+
       width: 90%;
       margin: 0 auto;
       margin-top: 24px;
@@ -742,19 +742,18 @@ $darkblue: #1d2f3b;
   }
 }
 
-
 .newGallery {
   background-color: #1d2f3b;
 
   .section1 {
     margin: 0 auto;
     width: 90%;
-padding-top: 117px;
-margin-bottom: 77px;
+    padding-top: 117px;
+    margin-bottom: 77px;
     .scrollContainer {
       width: 100%;
       overflow: hidden;
-      img{
+      img {
         width: 109px;
       }
       .topS {
@@ -825,7 +824,7 @@ margin-bottom: 77px;
       margin-bottom: 17px;
     }
     .sliderSection {
-   position: relative;
+      position: relative;
       width: 90%;
       margin: 0 auto;
       .serviceSlider {
@@ -873,12 +872,13 @@ margin-bottom: 77px;
         }
       }
 
-      .nextService,.prevService{
+      .nextService,
+      .prevService {
         position: absolute;
         top: 45%;
         z-index: 1;
       }
-      .nextService{
+      .nextService {
         left: 0;
         transform: rotate(180deg);
       }
@@ -891,7 +891,7 @@ margin-bottom: 77px;
 
       background-color: #305367;
       position: absolute;
-      height:calc(100% - 180px);
+      height: calc(100% - 180px);
       width: 100%;
       left: 0;
       right: 0;
@@ -947,7 +947,7 @@ margin-bottom: 77px;
     text-align: center;
     margin-top: 20px;
     cursor: pointer;
-    width:100%;
+    width: 100%;
     font-family: "IRANSANS";
     font-size: 12px;
     font-weight: 300;
@@ -956,13 +956,475 @@ margin-bottom: 77px;
     align-items: center;
     justify-content: center;
     color: #f9f2ea;
-    span{
+    span {
       margin-left: 10px;
       font-size: 30px;
     }
   }
 }
 
-.openPara{
+.openPara {
   overflow: hidden;
+}
+
+.errorPage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1d2f3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .showMore {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    > a {
+      background-color: #305367;
+      background-color: transparent;
+      // width: 93%;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.5em;
+      padding: 14px 21.5px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid white;
+      outline: none;
+      position: relative;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      &:hover {
+        cursor: pointer;
+        &::before {
+          width: 100%;
+        }
+        span {
+          color: white !important;
+          &.rect {
+            height: 20px !important;
+            width: 45px;
+            background-color: white !important;
+            svg {
+              transition: all 0.5s ease;
+              -webkit-transition: all 0.5s ease;
+              -moz-transition: all 0.5s ease;
+              -ms-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              opacity: 1 !important;
+            }
+          }
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0%;
+        background-color: #305367;
+        z-index: -1;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+      }
+      span {
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        display: flex;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 21.91px;
+        color: white;
+        &.rect {
+          overflow: hidden;
+          width: 10px;
+          height: 10px;
+          background-color: white;
+          svg {
+            width: 30px;
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .innerError {
+    transform: translateY(50px);
+    .logo {
+      text-align: center;
+      height: 40vh;
+      img {
+        height: 100%;
+      }
+    }
+    .para {
+      margin-top: 80px;
+      margin-bottom: 55px;
+      p {
+        font-family: "IRANSANS";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: -0.03em;
+        text-align: center;
+        color: #f9f2ea;
+      }
+    }
+  }
+  .innerContainer {
+    height: 80vh;
+  }
+}
+
+.contactUS {
+  background-color: #1d2f3b;
+  overflow: hidden;
+  .breadCrumb {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 90px;
+    ul {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      li {
+        a,
+        span,
+        h2 {
+          font-family: "IRANSANS";
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 21.91px;
+          color: #d9d9d9;
+        }
+      }
+    }
+  }
+  .section1 {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 12px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #f9f2ea;
+    .rSide {
+      h1 {
+        font-family: "IRANSANS";
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 34.43px;
+        text-align: right;
+        color: #f9f2ea;
+        margin-bottom: 35px;
+      }
+      .infos {
+        padding-right: 17px;
+        border-right: 1px solid #f9f2ea;
+        .captchas {
+          display: flex;
+          column-gap: 30px;
+          align-items: center;
+        }
+        .address{
+          padding-left: 20px;
+        }
+        .address,
+        .phone,
+        .instagram,
+        .socials,.web {
+          margin-bottom: 25px;
+        }
+        p,
+        span
+         {
+          text-decoration: none;
+          display: contents;
+          font-family: "IRANSANS";
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 25.04px;
+          text-align: right;
+          color: #f9f2ea;
+        }
+        a {
+          text-decoration: none;
+          display: contents;
+          font-family: "IRANSANS";
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 25.04px;
+          text-align: right;
+          color: #f9f2ea;
+        }
+        .web{
+          a{
+            text-decoration: none;
+          display: contents;
+          font-family: "IRANSANS";
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 25.04px;
+          text-align: right;
+          color: #f9f2ea;
+          }
+        }
+      }
+      .instagram{
+        a{
+          text-decoration: none;
+        display: contents;
+        font-family: "IRANSANS";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 25.04px;
+        text-align: right;
+        color: #f9f2ea;
+        }
+      }
+    }
+    .lSide {
+      margin-top: 37px;
+      .mapSection,
+      .mapContainer,
+      .mapIn {
+        width: 100%;
+        height: 361px;
+      }
+    }
+  }
+  .section2 {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-bottom: 80px;
+    h2 {
+      font-family: "IRANSANS";
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 34.43px;
+      text-align: right;
+      color: #f9f2ea;
+      margin-bottom: 30px;
+    }
+    .para {
+      margin-bottom: 30px;
+      p {
+        color: #f9f2ea;
+        font-family: "IRANSANS";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21.91px;
+        text-align: right;
+      }
+    }
+    form {
+      fieldset {
+        border: none;
+        padding: 0;
+        legend {
+          display: none;
+        }
+        [data-bc-schema-column] {
+          // display: flex;
+
+          column-gap: 30px;
+          align-items: center;
+          [data-bc-question] {
+            width: 100%;
+          }
+        }
+      }
+      [data-bc-title-container] {
+        display: none;
+      }
+      [data-bc-answer-container],
+      [data-bc-part-container],
+      [data-bc-btn-container],
+      [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+        width: 100%;
+      }
+      input,
+      textarea {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        border: none !important;
+        border-bottom: 1px solid #f9f2ea;
+        font-family: "IRANSANS" !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 21.91px !important;
+        text-align: right !important;
+        color: #f9f2ea !important;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        font-family: "IRANSANS" !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 21.91px !important;
+        text-align: right !important;
+        color: #f9f2ea !important;
+      }
+      [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+        border-bottom: 1px solid #f9f2ea;
+      }
+      .responsMsg1 {
+        display: none;
+        font-family: "IRANSANS" !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 21.91px !important;
+        text-align: right !important;
+        color: #f9f2ea !important;
+        margin-bottom: 30px;
+        top: -9px;
+        position: absolute;
+      }
+      [data-bc-part-related-cell]{
+        margin: 0;
+      }
+      .qclass8 {
+        position: relative;
+        padding-top: 15px;
+        // display: flex;
+        align-items: end;
+        column-gap: 30px;
+        .captchaContainerclass {
+          display: flex;
+          width: 100%;
+          direction: ltr;
+          padding: 7.5px 0;
+          align-items: center;
+          column-gap: 10px;
+          border-bottom: 1px solid #f9f2ea;
+          margin-bottom: 15px;
+          input {
+            border: none !important;
+            direction: rtl;
+          }
+        }
+      }
+      .showMore {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0 auto;
+        padding: 0;
+        height: 48px;
+        margin: 0;
+        border: none;
+        > div {
+          background-color: #305367;
+          // background-color: transparent;
+          // width: 93%;
+          margin: 0;
+          display: flex;
+          gap: 0.5em;
+          // padding: 14px 21.5px;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid white;
+          outline: none;
+          position: relative;
+          transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          &:hover {
+            cursor: pointer;
+            &::before {
+              width: 100%;
+            }
+            span {
+              color: white !important;
+              &.rect {
+                height: 20px !important;
+                width: 45px;
+                background-color: white !important;
+                svg {
+                  transition: all 0.5s ease;
+                  -webkit-transition: all 0.5s ease;
+                  -moz-transition: all 0.5s ease;
+                  -ms-transition: all 0.5s ease;
+                  -o-transition: all 0.5s ease;
+                  opacity: 1 !important;
+                }
+              }
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #305367;
+            z-index: -1;
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+          }
+          span {
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            display: flex;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 21.91px;
+            color: white;
+            &.rect {
+              overflow: hidden;
+              width: 10px;
+              height: 10px;
+              background-color: white;
+              svg {
+                width: 30px;
+                transition: all 0.5s ease;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

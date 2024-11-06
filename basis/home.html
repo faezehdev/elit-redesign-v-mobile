@@ -1,12 +1,20 @@
+<basis core="dbsource" source="media" name="db" lid="1" catid="2064" > <member type="list" name="sec3" perpage="10" pageno="1" /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2358647"> <member name="def-content" type="view" /> </basis>	
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="209357"> <member name="def-project" type="list" size="390x844"/> </basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2358647"> <member name="def-slider" type="list" format="4" /> </basis>	
+
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <title>الیت گالری</title>
+  <title>الیت </title>
+  <meta name="description" content="الیت" />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/swiper-bundle.min.css" rel="stylesheet">
-  <link href="css/main-mobile.css" rel="stylesheet">
-  <link href="css/m-style-mobile.css" rel="stylesheet">
+  <link href="[##cms.cms.cdn##]/newD/css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="[##cms.cms.cdn##]/newD/css/main-mobile.css" rel="stylesheet">
+  <link href="[##cms.cms.cdn##]/newD/css/m-style-mobile.css" rel="stylesheet">
 </head>
 <body>
 
@@ -18,20 +26,20 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide">
-            <div class="imgS">
-              <img src="images/Rectangle 1.jpg" alt="@name" title="@name">
-            </div>
-     
+           <basis core="print" datamembername="db.def-slider">
             
-          </div>
-          <div class="swiper-slide">
-       
-            <div class="imgS">
-              <img src="images/Frame 143726596.jpg" alt="@name" title="@name">
-            </div>
+               <face filter="ord=50">
+                 <div class="swiper-slide">
+                   <div class="imgS">
+                     <img src="/@largeIMG" alt="@name" title="@name">
+                   </div>
             
-          </div>
+                   
+                 </div>
+                   
+               </face>
+           </basis>
+         
        
         </div>
       
@@ -62,22 +70,29 @@
           
       </div>
     </section>
-    <section class="section section2 ">
-      <div class="imgS">
-        <img src="images/Rectangle 1.jpg" alt="@name" title="@name">
-      </div>
-      <div class="titleProj">
-        <a href="" title="@title">
-          پروژه دماوند
-        </a>
 
-        <div class="scrollD">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-          </div>
-      </div>
-    </section>
+    <basis core="print" datamembername="db.def-project">
+      
+        <face>
+          <section class="section section2 ">
+            <div class="imgS">
+              <img src="/@00390X00844prp" alt="@name" title="@name">
+            </div>
+            <div class="titleProj">
+              <a href="/@link" title="@title">
+              @title
+              </a>
+      
+              <div class="scrollD">
+                  <div class="chevron"></div>
+                  <div class="chevron"></div>
+                  <div class="chevron"></div>
+                </div>
+            </div>
+          </section>
+            
+        </face>
+    </basis>
 
 
     
@@ -87,37 +102,46 @@
       <div class="section1">
 
         <div class="para">
-            <a href="">
+          <a href="/الیت-گالری" title="الیت گالری">
+            <basis core="print" datamembername="db.def-content">
 
-                <p>
-                  
-      Elegant Architecture
-                </p>
-                <p>
-                  & Excellent Artwork, 
-      
-                </p>
+    <face filter="TypeID=129">
+        @Answer
+    </face>
+</basis>
             </a>
           </div>
         <div class="scrollContainer">
           <div class="topS">
-            <div class="imgS">
-              <img
-                src="images/Hallway Wall Art Mockup, Adjustable Frame _ Color, Luxury Stylish High-end Interior Living Room, Customizable Photoshop PSD Template 1.jpg"
-                alt="@name"
-                title="@name"
-              />
-            </div>
+            <basis core="print" datamembername="db.sec3">
+               
+                <face filter="RowNumber < 5">
+                  <div class="imgS">
+                    <img
+                      src="/@largeIMG"
+                      alt="@name"
+                      title="@name"
+                    />
+                  </div>
+                    
+                </face>
+            </basis>
            
           </div>
           <div class="btmS">
-            <div class="imgS">
-              <img
-                src="images/Hallway Wall Art Mockup, Adjustable Frame _ Color, Luxury Stylish High-end Interior Living Room, Customizable Photoshop PSD Template 1.jpg"
-                alt="@name"
-                title="@name"
-              />
-            </div>
+            <basis core="print" datamembername="db.sec3">
+              
+                <face filter="RowNumber > 4">
+                  <div class="imgS">
+                    <img
+                      src="/@largeIMG "
+                      alt="@name"
+                      title="@name"
+                    />
+                  </div>
+                    
+                </face>
+            </basis>
          
           </div>
         </div>
@@ -130,11 +154,10 @@
   </div>
 
 </main>
-<script src="js/gsap.js"></script>
-<script src="js/scrollTrigger.js"></script>
-<script src="js/jquery.2.2.2.min.js"></script>
 
-<script src="js/swiper-bundle11.0.6.min.js"></script>
-<script src="js/home-mobile.js"></script>
+<basis core="call" file="newMobileScript.inc" />
+
+<script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+<script src="[##cms.cms.cdn##]/newD/js/home-mobile.js"></script>
 </body>
 </html>

@@ -490,6 +490,7 @@
 .Home .gallery .para {
   text-align: left;
   direction: ltr;
+  margin-bottom: 30px;
 }
 .Home .gallery .para a {
   width: 100%;
@@ -499,9 +500,9 @@
 .Home .gallery .para p {
   display: contents;
   font-family: "IRANSANS";
-  font-size: 22px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 60px;
+  line-height: 29px;
   text-align: center;
   color: #f9f2ea;
 }
@@ -820,7 +821,8 @@
   text-align: justify;
   color: white;
 }
-.newGallery .section2 .sliderSection .nextService, .newGallery .section2 .sliderSection .prevService {
+.newGallery .section2 .sliderSection .nextService,
+.newGallery .section2 .sliderSection .prevService {
   position: absolute;
   top: 45%;
   z-index: 1;
@@ -904,4 +906,448 @@
 
 .openPara {
   overflow: hidden;
+}
+
+.errorPage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1d2f3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.errorPage .showMore {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+.errorPage .showMore > a {
+  background-color: #305367;
+  background-color: transparent;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5em;
+  padding: 14px 21.5px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  outline: none;
+  position: relative;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.errorPage .showMore > a:hover {
+  cursor: pointer;
+}
+.errorPage .showMore > a:hover::before {
+  width: 100%;
+}
+.errorPage .showMore > a:hover span {
+  color: white !important;
+}
+.errorPage .showMore > a:hover span.rect {
+  height: 20px !important;
+  width: 45px;
+  background-color: white !important;
+}
+.errorPage .showMore > a:hover span.rect svg {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+.errorPage .showMore > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #305367;
+  z-index: -1;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.errorPage .showMore > a span {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  display: flex;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  color: white;
+}
+.errorPage .showMore > a span.rect {
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+.errorPage .showMore > a span.rect svg {
+  width: 30px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 0;
+}
+.errorPage .innerError {
+  transform: translateY(50px);
+}
+.errorPage .innerError .logo {
+  text-align: center;
+  height: 40vh;
+}
+.errorPage .innerError .logo img {
+  height: 100%;
+}
+.errorPage .innerError .para {
+  margin-top: 80px;
+  margin-bottom: 55px;
+}
+.errorPage .innerError .para p {
+  font-family: "IRANSANS";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #f9f2ea;
+}
+.errorPage .innerContainer {
+  height: 80vh;
+}
+
+.contactUS {
+  background-color: #1d2f3b;
+  overflow: hidden;
+}
+.contactUS .breadCrumb {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 90px;
+}
+.contactUS .breadCrumb ul {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.contactUS .breadCrumb ul li a,
+.contactUS .breadCrumb ul li span,
+.contactUS .breadCrumb ul li h2 {
+  font-family: "IRANSANS";
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 21.91px;
+  color: #d9d9d9;
+}
+.contactUS .section1 {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 12px;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #f9f2ea;
+}
+.contactUS .section1 .rSide h1 {
+  font-family: "IRANSANS";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34.43px;
+  text-align: right;
+  color: #f9f2ea;
+  margin-bottom: 35px;
+}
+.contactUS .section1 .rSide .infos {
+  padding-right: 17px;
+  border-right: 1px solid #f9f2ea;
+}
+.contactUS .section1 .rSide .infos .captchas {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+}
+.contactUS .section1 .rSide .infos .address {
+  padding-left: 20px;
+}
+.contactUS .section1 .rSide .infos .address,
+.contactUS .section1 .rSide .infos .phone,
+.contactUS .section1 .rSide .infos .instagram,
+.contactUS .section1 .rSide .infos .socials, .contactUS .section1 .rSide .infos .web {
+  margin-bottom: 25px;
+}
+.contactUS .section1 .rSide .infos p,
+.contactUS .section1 .rSide .infos span {
+  text-decoration: none;
+  display: contents;
+  font-family: "IRANSANS";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25.04px;
+  text-align: right;
+  color: #f9f2ea;
+}
+.contactUS .section1 .rSide .infos a {
+  text-decoration: none;
+  display: contents;
+  font-family: "IRANSANS";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 25.04px;
+  text-align: right;
+  color: #f9f2ea;
+}
+.contactUS .section1 .rSide .infos .web a {
+  text-decoration: none;
+  display: contents;
+  font-family: "IRANSANS";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25.04px;
+  text-align: right;
+  color: #f9f2ea;
+}
+.contactUS .section1 .rSide .instagram a {
+  text-decoration: none;
+  display: contents;
+  font-family: "IRANSANS";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25.04px;
+  text-align: right;
+  color: #f9f2ea;
+}
+.contactUS .section1 .lSide {
+  margin-top: 37px;
+}
+.contactUS .section1 .lSide .mapSection,
+.contactUS .section1 .lSide .mapContainer,
+.contactUS .section1 .lSide .mapIn {
+  width: 100%;
+  height: 361px;
+}
+.contactUS .section2 {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+.contactUS .section2 h2 {
+  font-family: "IRANSANS";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34.43px;
+  text-align: right;
+  color: #f9f2ea;
+  margin-bottom: 30px;
+}
+.contactUS .section2 .para {
+  margin-bottom: 30px;
+}
+.contactUS .section2 .para p {
+  color: #f9f2ea;
+  font-family: "IRANSANS";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21.91px;
+  text-align: right;
+}
+.contactUS .section2 form fieldset {
+  border: none;
+  padding: 0;
+}
+.contactUS .section2 form fieldset legend {
+  display: none;
+}
+.contactUS .section2 form fieldset [data-bc-schema-column] {
+  column-gap: 30px;
+  align-items: center;
+}
+.contactUS .section2 form fieldset [data-bc-schema-column] [data-bc-question] {
+  width: 100%;
+}
+.contactUS .section2 form [data-bc-title-container] {
+  display: none;
+}
+.contactUS .section2 form [data-bc-answer-container],
+.contactUS .section2 form [data-bc-part-container],
+.contactUS .section2 form [data-bc-btn-container],
+.contactUS .section2 form [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  width: 100%;
+}
+.contactUS .section2 form input,
+.contactUS .section2 form textarea {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #f9f2ea;
+  font-family: "IRANSANS" !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px !important;
+  text-align: right !important;
+  color: #f9f2ea !important;
+}
+.contactUS .section2 form input::placeholder,
+.contactUS .section2 form textarea::placeholder {
+  font-family: "IRANSANS" !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px !important;
+  text-align: right !important;
+  color: #f9f2ea !important;
+}
+.contactUS .section2 form [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  border-bottom: 1px solid #f9f2ea;
+}
+.contactUS .section2 form .responsMsg1 {
+  display: none;
+  font-family: "IRANSANS" !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px !important;
+  text-align: right !important;
+  color: #f9f2ea !important;
+  margin-bottom: 30px;
+  top: -9px;
+  position: absolute;
+}
+.contactUS .section2 form [data-bc-part-related-cell] {
+  margin: 0;
+}
+.contactUS .section2 form .qclass8 {
+  position: relative;
+  padding-top: 15px;
+  align-items: end;
+  column-gap: 30px;
+}
+.contactUS .section2 form .qclass8 .captchaContainerclass {
+  display: flex;
+  width: 100%;
+  direction: ltr;
+  padding: 7.5px 0;
+  align-items: center;
+  column-gap: 10px;
+  border-bottom: 1px solid #f9f2ea;
+  margin-bottom: 15px;
+}
+.contactUS .section2 form .qclass8 .captchaContainerclass input {
+  border: none !important;
+  direction: rtl;
+}
+.contactUS .section2 form .showMore {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0;
+  height: 48px;
+  margin: 0;
+  border: none;
+}
+.contactUS .section2 form .showMore > div {
+  background-color: #305367;
+  margin: 0;
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  outline: none;
+  position: relative;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.contactUS .section2 form .showMore > div:hover {
+  cursor: pointer;
+}
+.contactUS .section2 form .showMore > div:hover::before {
+  width: 100%;
+}
+.contactUS .section2 form .showMore > div:hover span {
+  color: white !important;
+}
+.contactUS .section2 form .showMore > div:hover span.rect {
+  height: 20px !important;
+  width: 45px;
+  background-color: white !important;
+}
+.contactUS .section2 form .showMore > div:hover span.rect svg {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+.contactUS .section2 form .showMore > div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #305367;
+  z-index: -1;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.contactUS .section2 form .showMore > div span {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  display: flex;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  color: white;
+}
+.contactUS .section2 form .showMore > div span.rect {
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+.contactUS .section2 form .showMore > div span.rect svg {
+  width: 30px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 0;
 }/*# sourceMappingURL=m-style-mobile.css.map */
