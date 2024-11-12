@@ -3,6 +3,7 @@ $darkblue: #1d2f3b;
 .gallery {
   background-color: $backPink;
   overflow: hidden;
+  
   .section1 {
     padding-top: 239px;
     margin-bottom: 152px;
@@ -959,6 +960,8 @@ $darkblue: #1d2f3b;
     span {
       margin-left: 10px;
       font-size: 30px;
+      transform: translateY(6px);
+      display: inline-block;  
     }
   }
 }
@@ -1427,4 +1430,19 @@ $darkblue: #1d2f3b;
       }
     }
   }
+}
+
+.sGallery{
+  z-index: 2;
+
+  .popSlider{
+    z-index: 2;
+  }
+}
+.backThumb{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
 }
